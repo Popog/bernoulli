@@ -1,0 +1,28 @@
+[package]
+name = "bernoulli"
+version = "0.1.0"
+edition = "2018"
+license = "MIT OR Apache-2.0"
+readme = "README.md"
+repository = "https://github.com/Popog/bernoulli"
+documentation = "https://docs.rs/bernoulli"
+description = """
+An exact Bernoulli distribution.
+"""
+keywords = ["random", "rng"]
+categories = ["algorithms", "no-std"]
+
+[dependencies]
+rand = { version = "0.8", features = []}
+num-traits = { version = "0.2", features = []}
+
+[dev-dependencies]
+criterion = "0.3"
+rand_pcg = "0.3"
+
+[profile.test]
+opt-level = 3
+
+[[bench]]
+name = "exact"
+harness = false
